@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Jatav - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* Custom Tailwind overrides */
         .gradient-bg {
-            background: linear-gradient(135deg, #3b82f6, #10b981, #8b5cf6);
+            background: linear-gradient(135deg, #1e3a8a, #6b7280);
         }
         .project-card, .achievement-card, .experience-card, .skill-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             background: #ffffff;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         .project-card:hover, .achievement-card:hover, .experience-card:hover, .skill-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         .section-title {
             position: relative;
             display: inline-block;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
         }
         .section-title::after {
             content: '';
@@ -34,49 +34,74 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, #3b82f6, #10b981);
+            width: 50px;
+            height: 3px;
+            background: #1e3a8a;
         }
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            background: #f0f4f8;
+            background: #f8fafc;
         }
         .flutter-logo, .react-logo, .skill-icon {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             transition: transform 0.3s ease;
         }
         .flutter-logo:hover, .react-logo:hover, .skill-icon:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         .fade-in {
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 0.8s ease-in;
         }
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(15px); }
             100% { opacity: 1; transform: translateY(0); }
-        }
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
         }
         .nav-sticky {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .btn-animated {
             transition: all 0.3s ease;
         }
         .btn-animated:hover {
-            transform: scale(1.05);
-            background: #2563eb;
+            background: #1e3a8a;
             color: white;
+            transform: scale(1.05);
+        }
+        /* Mobile Navigation */
+        .nav-mobile {
+            display: none;
+        }
+        @media (max-width: 640px) {
+            .nav-desktop {
+                display: none;
+            }
+            .nav-mobile {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .nav-menu.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+            }
+            .nav-menu a {
+                display: block;
+                padding: 0.5rem 0;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -84,198 +109,222 @@
     <!-- Navigation Bar -->
     <nav class="nav-sticky py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-800">Arjun Jatav</div>
-            <div class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
-                <a href="#achievements" class="text-gray-600 hover:text-blue-600">Achievements</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+            <div class="text-2xl font-semibold text-gray-800">Arjun Jatav</div>
+            <!-- Desktop Navigation -->
+            <div class="nav-desktop space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-800 font-medium">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-800 font-medium">Skills</a>
+                <a href="#achievements" class="text-gray-600 hover:text-blue-800 font-medium">Achievements</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-800 font-medium">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-800 font-medium">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-800 font-medium">Contact</a>
+            </div>
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile">
+                <button id="nav-toggle" class="text-gray-600 hover:text-blue-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div id="nav-menu" class="nav-menu hidden">
+                    <a href="#about" class="text-gray-600 hover:text-blue-800 font-medium">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-800 font-medium">Skills</a>
+                    <a href="#achievements" class="text-gray-600 hover:text-blue-800 font-medium">Achievements</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-800 font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-800 font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-800 font-medium">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Header / Hero Section -->
-    <header class="gradient-bg text-white py-24 parallax">
+    <header class="gradient-bg text-white py-20">
         <div class="container mx-auto px-4 text-center">
-            <img src="https://via.placeholder.com/150" alt="Arjun Jatav" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Arjun Jatav</h1>
-            <p class="text-xl md:text-2xl mt-3 flex justify-center items-center">
-                <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="flutter-logo mr-3">
-                <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="react-logo mr-3">
+            <img src="https://via.placeholder.com/150" alt="Arjun Jatav" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Arjun Jatav</h1>
+            <p class="text-lg md:text-xl flex justify-center items-center">
+                <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="flutter-logo mr-2">
+                <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="react-logo mr-2">
                 Mobile App Developer
             </p>
-            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl">Crafting innovative, user-friendly, and scalable mobile apps with Flutter and React Native. Based in [Your City, e.g., Mumbai].</p>
-            <a href="#contact" class="mt-8 inline-block bg-white text-blue-600 font-semibold py-3 px-10 rounded-full btn-animated"><i class="fas fa-envelope mr-2"></i> Get in Touch</a>
+            <p class="mt-4 max-w-2xl mx-auto text-base md:text-lg">Crafting innovative, user-friendly, and scalable mobile apps with Flutter and React Native. Based in [Your City, e.g., Mumbai].</p>
+            <a href="#contact" class="mt-6 inline-block bg-white text-blue-800 font-semibold py-2 px-8 rounded-md btn-animated">Get in Touch</a>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white fade-in">
+    <section id="about" class="py-16 bg-white fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">About Me</h2>
-            <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed">
-                <p class="mb-4 text-lg">I’m Arjun Jatav, a passionate mobile app developer specializing in <strong>React Native</strong> and <strong>Flutter</strong>. Based in [Your City], I create cross-platform apps that deliver exceptional user experiences and solve real-world challenges.</p>
-                <p class="text-lg">With a B.Tech in Computer Science (2018–2022), I bring expertise in JavaScript, Dart, Firebase, and modern UI/UX design. I’m dedicated to building high-performance apps and staying ahead in the mobile development space.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">About Me</h2>
+            <div class="max-w-3xl mx-auto text-gray-600 leading-relaxed text-base md:text-lg">
+                <p class="mb-4">I’m Arjun Jatav, a dedicated mobile app developer specializing in <strong>React Native</strong> and <strong>Flutter</strong>. Based in [Your City], I build cross-platform applications that prioritize performance and user experience.</p>
+                <p>With a B.Tech in Computer Science (2018–2022), I leverage expertise in JavaScript, Dart, Firebase, and UI/UX design to create solutions that drive impact. My passion lies in delivering high-quality apps and embracing the latest in mobile technology.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-100 fade-in">
+    <section id="skills" class="py-16 bg-gray-50 fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="skill-icon mr-3"> Flutter
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="skill-icon mr-2"> Flutter
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="skill-icon mr-3"> React Native
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="skill-icon mr-2"> React Native
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript Logo" class="skill-icon mr-3"> JavaScript
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript Logo" class="skill-icon mr-2"> JavaScript
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/dart.svg" alt="Dart Logo" class="skill-icon mr-3"> Dart
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/dart.svg" alt="Dart Logo" class="skill-icon mr-2"> Dart
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/firebase.svg" alt="Firebase Logo" class="skill-icon mr-3"> Firebase
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/firebase.svg" alt="Firebase Logo" class="skill-icon mr-2"> Firebase
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-server skill-icon mr-3 text-blue-600"></i> REST APIs
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-server skill-icon mr-2 text-blue-600"></i> REST APIs
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt="Git Logo" class="skill-icon mr-3"> Git
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt="Git Logo" class="skill-icon mr-2"> Git
                 </div>
-                <div class="skill-card bg-blue-50 text-blue-800 font-semibold text-center py-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-paint-brush skill-icon mr-3 text-blue-600"></i> UI/UX Design
+                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-paint-brush skill-icon mr-2 text-blue-600"></i> UI/UX Design
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-white fade-in">
+    <section id="achievements" class="py-16 bg-white fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Achievements</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="achievement-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-500"></i> [Achievement 1, e.g., App Launch Success]</h3>
-                    <p class="text-gray-600 mt-2">[Description, e.g., Launched a React Native e-commerce app with 20,000+ downloads on Google Play Store in 2024.]</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-600"></i> [Achievement 1, e.g., App Launch Success]</h3>
+                    <p class="text-gray-600 mt-2 text-base">[Description, e.g., Launched a React Native e-commerce app with 20,000+ downloads on Google Play Store in 2024.]</p>
                 </div>
-                <div class="achievement-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-500"></i> [Achievement 2, e.g., Hackathon Winner]</h3>
-                    <p class="text-gray-600 mt-2">[Description, e.g., Won 1st place in a national Flutter hackathon for a real-time chat app in 2023.]</p>
+                <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-600"></i> [Achievement 2, e.g., Hackathon Winner]</h3>
+                    <p class="text-gray-600 mt-2 text-base">[Description, e.g., Won 1st place in a national Flutter hackathon for a real-time chat app in 2023.]</p>
                 </div>
-                <div class="achievement-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-500"></i> [Achievement 3, e.g., Open Source Contributor]</h3>
-                    <p class="text-gray-600 mt-2">[Description, e.g., Contributed to Flutter open-source packages, enhancing UI components for 10+ projects.]</p>
+                <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-trophy mr-2 text-yellow-600"></i> [Achievement 3, e.g., Open Source Contributor]</h3>
+                    <p class="text-gray-600 mt-2 text-base">[Description, e.g., Contributed to Flutter open-source packages, enhancing UI components for 10+ projects.]</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience/Companies Section -->
-    <section id="experience" class="py-20 bg-gray-100 fade-in">
+    <section id="experience" class="py-16 bg-gray-50 fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Experience</h2>
-            <div class="max-w-5xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
                 <div class="experience-card bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., TechCorp Solutions]</h3>
-                    <p class="text-gray-500">[Role, e.g., React Native Developer] | [Dates, e.g., Jan 2023 - Present]</p>
-                    <p class="text-gray-600 mt-2">[Description, e.g., Built a cross-platform delivery app with real-time tracking using React Native and Firebase, serving 50,000+ users.]</p>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., TechCorp Solutions]</h3>
+                    <p class="text-gray-500 text-sm">[Role, e.g., React Native Developer] | [Dates, e.g., Jan 2023 - Present]</p>
+                    <p class="text-gray-600 mt-2 text-base">[Description, e.g., Built a cross-platform delivery app with real-time tracking using React Native and Firebase, serving 50,000+ users.]</p>
                 </div>
                 <div class="experience-card bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., Freelance Project]</h3>
-                    <p class="text-gray-500">[Role, e.g., Flutter Developer] | [Dates, e.g., Jun 2022 - Dec 2022]</p>
-                    <p class="text-gray-600 mt-2">[Description, e.g., Developed a Flutter-based fitness app with real-time workout tracking for a startup client.]</p>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., Freelance Project]</h3>
+                    <p class="text-gray-500 text-sm">[Role, e.g., Flutter Developer] | [Dates, e.g., Jun 2022 - Dec 2022]</p>
+                    <p class="text-gray-600 mt-2 text-base">[Description, e.g., Developed a Flutter-based fitness app with real-time workout tracking for a startup client.]</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white fade-in">
+    <section id="projects" class="py-16 bg-white fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <img src="https://via.placeholder.com/300x200" alt="Shopping App" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 flex items-center">
-                        <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-6 h-6 mr-2"> Shopping App
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="project-card bg-white rounded-lg shadow-lg p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Shopping App" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                        <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-5 h-5 mr-2"> Shopping App
                     </h3>
-                    <p class="text-gray-600 mt-2">A cross-platform e-commerce app built with React Native, Redux, and Firebase. Features product listings, cart, and Stripe payments.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/shopping-app]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <p class="text-gray-600 mt-2 text-base">A cross-platform e-commerce app built with React Native, Redux, and Firebase. Features product listings, cart, and Stripe payments.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/shopping-app]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
-                <div class="project-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <img src="https://via.placeholder.com/300x200" alt="Fitness Tracker" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 flex items-center">
-                        <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="w-6 h-6 mr-2"> Fitness Tracker
+                <div class="project-card bg-white rounded-lg shadow-lg p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Fitness Tracker" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                        <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="w-5 h-5 mr-2"> Fitness Tracker
                     </h3>
-                    <p class="text-gray-600 mt-2">A Flutter-based app for tracking workouts and calories, with a sleek UI and Firebase integration. Supports Android and iOS.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/fitness-tracker]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <p class="text-gray-600 mt-2 text-base">A Flutter-based app for tracking workouts and calories, with a sleek UI and Firebase integration. Supports Android and iOS.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/fitness-tracker]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
-                <div class="project-card bg-gray-50 rounded-lg shadow-lg p-6">
-                    <img src="https://via.placeholder.com/300x200" alt="Todo App" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 flex items-center">
-                        <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-6 h-6 mr-2"> Todo App
+                <div class="project-card bg-white rounded-lg shadow-lg p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Todo App" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+                        <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-5 h-5 mr-2"> Todo App
                     </h3>
-                    <p class="text-gray-600 mt-2">A simple yet powerful todo list app built with React Native and AsyncStorage for task management.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/todo-app]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <p class="text-gray-600 mt-2 text-base">A simple yet powerful todo list app built with React Native and AsyncStorage for task management.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/todo-app]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-100 fade-in">
+    <section id="education" class="py-16 bg-gray-50 fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Education</h2>
-            <div class="max-w-5xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Education</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800"><i class="fas fa-graduation-cap mr-2 text-blue-600"></i> B.Tech in Computer Science</h3>
-                    <p class="text-gray-500">[Institution, e.g., XYZ University, Mumbai] | 2018 - 2022</p>
-                    <p class="text-gray-600 mt-2">[Details, e.g., Specialized in software engineering with a focus on mobile app development. Completed projects in mobile app development and cloud computing.]</p>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-graduation-cap mr-2 text-blue-600"></i> B.Tech in Computer Science</h3>
+                    <p class="text-gray-500 text-sm">[Institution, e.g., XYZ University, Mumbai] | 2018 - 2022</p>
+                    <p class="text-gray-600 mt-2 text-base">[Details, e.g., Specialized in software engineering with a focus on mobile app development. Completed projects in mobile app development and cloud computing.]</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-white fade-in">
+    <section id="certifications" class="py-16 bg-white fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Certifications</h2>
-            <div class="max-w-5xl mx-auto space-y-4">
-                <div class="bg-gray-50 rounded-lg shadow-md p-4">
-                    <p class="text-gray-600"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Meta Certified React Native Developer, 2023]</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Certifications</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Meta Certified React Native Developer, 2023]</p>
                 </div>
-                <div class="bg-gray-50 rounded-lg shadow-md p-4">
-                    <p class="text-gray-600"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Google Flutter Certification, 2022]</p>
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Google Flutter Certification, 2022]</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100 fade-in">
+    <section id="contact" class="py-16 bg-gray-50 fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 section-title">Contact Me</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Contact Me</h2>
             <div class="max-w-lg mx-auto text-gray-600">
-                <p class="mb-4 flex items-center"><i class="fas fa-envelope mr-3 text-blue-600"></i> <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
-                <p class="mb-4 flex items-center"><i class="fab fa-github mr-3 text-blue-600"></i> <a href="https://github.com/arjunjatav" class="text-blue-600 hover:underline">github.com/arjunjatav</a></p>
-                <p class="mb-4 flex items-center"><i class="fab fa-linkedin mr-3 text-blue-600"></i> <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a></p>
-                <p class="mt-4 text-lg">Let’s collaborate to build cutting-edge mobile apps! Reach out for projects, opportunities, or just to connect.</p>
-                <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full btn-animated"><i class="fas fa-rocket mr-2"></i> Start a Project</a>
+                <p class="mb-3 flex items-center text-base"><i class="fas fa-envelope mr-2 text-blue-600"></i> <a href="mailto:your.email@example.com" class="text-blue-800 hover:underline">your.email@example.com</a></p>
+                <p class="mb-3 flex items-center text-base"><i class="fab fa-github mr-2 text-blue-600"></i> <a href="https://github.com/arjunjatav" class="text-blue-800 hover:underline">github.com/arjunjatav</a></p>
+                <p class="mb-3 flex items-center text-base"><i class="fab fa-linkedin mr-2 text-blue-600"></i> <a href="https://linkedin.com/in/yourprofile" class="text-blue-800 hover:underline">linkedin.com/in/yourprofile</a></p>
+                <p class="mt-4 text-base">Let’s collaborate to build innovative mobile applications. Reach out for project inquiries or opportunities.</p>
+                <a href="#contact" class="mt-6 inline-block bg-blue-800 text-white font-semibold py-2 px-8 rounded-md btn-animated"><i class="fas fa-rocket mr-2"></i> Start a Project</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
+    <footer class="gradient-bg text-white py-6">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-lg">© 2025 Arjun Jatav. Built with <i class="fas fa-heart text-red-400"></i> for mobile innovation.</p>
+            <p class="text-base">© 2025 Arjun Jatav. Crafted with passion for mobile innovation.</p>
         </div>
     </footer>
+
+    <!-- Mobile Navigation Script -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

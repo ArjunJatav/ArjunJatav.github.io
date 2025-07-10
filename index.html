@@ -1,42 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Jatav - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Arial; background: #f4f4f4; text-align: center; margin: 0; }
-        .header { background: #1a73e8; color: white; padding: 20px; }
-        .section { background: white; margin: 20px auto; padding: 20px; width: 80%; border-radius: 5px; }
-        img { width: 100%; max-width: 300px; border-radius: 5px; }
-        a { color: #1a73e8; }
-        .footer { background: #333; color: white; padding: 10px; }
+        /* Custom Tailwind overrides */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a73e8, #34d399);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
-<body>
-    <div class="header">
-        <h1>Arjun Jatav</h1>
-        <p>React Native & Flutter Developer</p>
-    </div>
-    <div class="section">
-        <h2>About Me</h2>
-        <p>I’m Arjun Jatav, a passionate React Native and Flutter developer. I build mobile apps that are fast, user-friendly, and scalable. Based in [Your City], I love creating solutions for real-world problems.</p>
-    </div>
-    <div class="section">
-        <h2>My Projects</h2>
-        <p>Project 1: [Describe your app, e.g., A shopping app built with React Native].</p>
-        <img src="https://via.placeholder.com/300x200" alt="Project 1">
-        <p><a href="[Link to project or demo]">View Project</a></p>
-        <p>Project 2: [Describe another app, e.g., A fitness tracker built with Flutter].</p>
-        <img src="https://via.placeholder.com/300x200" alt="Project 2">
-        <p><a href="[Link to project or demo]">View Project</a></p>
-    </div>
-    <div class="section">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/arjunjatav">github.com/arjunjatav</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-    </div>
-    <div class="footer">
-        <p>© 2025 Arjun Jatav. All rights reserved.</p>
-    </div>
+<body class="bg-gray-100 font-sans">
+    <!-- Header / Hero Section -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://via.placeholder.com/150" alt="Arjun Jatav" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white">
+            <h1 class="text-4xl md:text-5xl font-bold">Arjun Jatav</h1>
+            <p class="text-xl mt-2">React Native & Flutter Developer</p>
+            <p class="mt-4 max-w-2xl mx-auto">I’m a passionate mobile app developer based in [Your City, e.g., Mumbai]. I specialize in creating fast, user-friendly, and scalable apps using React Native and Flutter.</p>
+            <a href="#contact" class="mt-6 inline-block bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-blue-100 transition">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">About Me</h2>
+            <div class="max-w-3xl mx-auto text-gray-600">
+                <p class="mb-4">Hello! I’m Arjun Jatav, a dedicated mobile app developer with expertise in React Native and Flutter. I love building apps that solve real-world problems, from e-commerce platforms to fitness trackers. Based in [Your City], I focus on delivering high-quality, cross-platform solutions.</p>
+                <p>My skills include JavaScript, TypeScript, Dart, Firebase, and REST APIs. I’m always learning new technologies to stay ahead in the fast-paced world of mobile development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">React Native</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">Flutter</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">JavaScript</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">Dart</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">Firebase</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">REST APIs</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">Git</div>
+                <div class="bg-blue-100 text-blue-800 font-semibold text-center py-3 rounded-lg">UI/UX Design</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-gray-50 rounded-lg shadow-md p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Shopping App" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Shopping App (React Native)</h3>
+                    <p class="text-gray-600 mt-2">A cross-platform mobile app for local stores to sell products online, built with React Native, Redux, and Firebase. Features include product listings, cart, and secure payments.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/shopping-app]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">View Project</a>
+                </div>
+                <div class="project-card bg-gray-50 rounded-lg shadow-md p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Fitness Tracker" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Fitness Tracker (Flutter)</h3>
+                    <p class="text-gray-600 mt-2">A Flutter-based app to track workouts and calories, with a sleek UI and integration with Firebase for user data. Supports Android and iOS.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/fitness-tracker]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">View Project</a>
+                </div>
+                <div class="project-card bg-gray-50 rounded-lg shadow-md p-6">
+                    <img src="https://via.placeholder.com/300x200" alt="Todo App" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Todo App (React Native)</h3>
+                    <p class="text-gray-600 mt-2">A simple yet powerful todo list app built with React Native and AsyncStorage for local data persistence. Perfect for managing daily tasks.</p>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/todo-app]" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Contact Me</h2>
+            <div class="max-w-lg mx-auto text-gray-600">
+                <p class="mb-2">📧 Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
+                <p class="mb-2">💻 GitHub: <a href="https://github.com/arjunjatav" class="text-blue-600 hover:underline">github.com/arjunjatav</a></p>
+                <p class="mb-2">🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a></p>
+                <p class="mt-4">I’m always open to new opportunities and collaborations. Reach out to discuss your next project!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Arjun Jatav. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

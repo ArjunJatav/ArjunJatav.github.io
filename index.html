@@ -36,20 +36,24 @@
             transform: translateX(-50%);
             width: 50px;
             height: 3px;
-            background: #1e3a8a;
+            background: #7C2A8D;
         }
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            background: #f8fafc;
+            background: #f9f1fc;
         }
-        .flutter-logo, .react-logo, .skill-icon {
+        .flutter-logo, .react-logo, .skill-icon, .achievement-icon, .nav-profile-img {
             width: 28px;
             height: 28px;
             transition: transform 0.3s ease;
         }
-        .flutter-logo:hover, .react-logo:hover, .skill-icon:hover {
+        .flutter-logo:hover, .react-logo:hover, .skill-icon:hover, .achievement-icon:hover, .nav-profile-img:hover {
             transform: scale(1.1);
+        }
+        .achievement-icon {
+            width: 20px;
+            height: 20px;
         }
         .fade-in {
             animation: fadeIn 0.8s ease-in;
@@ -69,7 +73,7 @@
             transition: all 0.3s ease;
         }
         .btn-animated:hover {
-            background: #1e3a8a;
+            background: #7C2A8D;
             color: white;
             transform: scale(1.05);
         }
@@ -102,6 +106,10 @@
                 padding: 0.5rem 0;
                 text-align: center;
             }
+            .nav-profile-img {
+                width: 24px;
+                height: 24px;
+            }
         }
     </style>
 </head>
@@ -110,30 +118,30 @@
     <nav class="nav-sticky py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="Images/Profile.jpeg" alt="Arjun Jatav" class="nav-profile-img rounded-full border-2 border-gray-300" height="40" width="40">
+                <img src="Images/Profile.jpeg" alt="Arjun Jatav" class="nav-profile-img rounded-full border-2 border-[#7C2A8D]">
                 <div class="text-2xl font-semibold text-gray-800">Arjun Jatav</div>
             </div>
             <!-- Desktop Navigation -->
             <div class="nav-desktop space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-800 font-medium">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-800 font-medium">Skills</a>
-                <a href="#achievements" class="text-gray-600 hover:text-blue-800 font-medium">Achievements</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-800 font-medium">Experience</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-800 font-medium">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-800 font-medium">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-[#7C2A8D] font-medium">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Skills</a>
+                <a href="#achievements" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Achievements</a>
+                <a href="#experience" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Contact</a>
             </div>
             <!-- Mobile Navigation -->
             <div class="nav-mobile">
-                <button id="nav-toggle" class="text-gray-600 hover:text-blue-800 focus:outline-none">
+                <button id="nav-toggle" class="text-gray-600 hover:text-[#7C2A8D] focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
                 <div id="nav-menu" class="nav-menu hidden">
-                    <a href="#about" class="text-gray-600 hover:text-blue-800 font-medium">About</a>
-                    <a href="#skills" class="text-gray-600 hover:text-blue-800 font-medium">Skills</a>
-                    <a href="#achievements" class="text-gray-600 hover:text-blue-800 font-medium">Achievements</a>
-                    <a href="#experience" class="text-gray-600 hover:text-blue-800 font-medium">Experience</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-800 font-medium">Projects</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-800 font-medium">Contact</a>
+                    <a href="#about" class="text-gray-600 hover:text-[#7C2A8D] font-medium">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Skills</a>
+                    <a href="#achievements" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Achievements</a>
+                    <a href="#experience" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-[#7C2A8D] font-medium">Contact</a>
                 </div>
             </div>
         </div>
@@ -142,14 +150,14 @@
     <!-- Header / Hero Section -->
     <header class="gradient-bg text-white py-20">
         <div class="container mx-auto px-4 text-center">
-            <img src="Images/Profile.jpeg" alt="Arjun Jatav" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+            <img src="Images/Profile.jpeg" alt="Arjun Jatav" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-[#E6D0FA] shadow-lg">
             <h1 class="text-2xl md:text-3xl font-bold mb-4">Arjun Jatav</h1>
             <p class="text-lg md:text-xl flex justify-center items-center">
-                <img src="https://arjunjatav.github.io/Images/computer.png" alt="React Native Logo" class="react-logo mr-2">
+                <img src="Images/computer.png" alt="Mobile Developer Icon" class="react-logo mr-2">
                 Mobile Application Developer
             </p>
             <p class="mt-4 max-w-2xl mx-auto text-base md:text-lg">Crafting innovative, user-friendly, and scalable mobile apps with Flutter and React Native. Based in [Your City, e.g., Mumbai].</p>
-            <a href="#contact" class="mt-6 inline-block bg-white text-blue-800 font-semibold py-2 px-8 rounded-md btn-animated">Get in Touch</a>
+            <a href="#contact" class="mt-6 inline-block bg-[#7C2A8D] text-white font-semibold py-2 px-8 rounded-md btn-animated">Get in Touch</a>
         </div>
     </header>
 
@@ -165,61 +173,60 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50 fade-in">
+    <section id="skills" class="py-16 bg-[#f9f1fc] fade-in">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Skills</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/flutter.png" alt="Flutter Logo" class="skill-icon mr-2"> Flutter
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/flutter.png" alt="Flutter Logo" class="skill-icon mr-2"> Flutter
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
                     <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="skill-icon mr-2"> React Native
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/js.png" alt="JavaScript Logo" class="skill-icon mr-2"> TS/JS
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/js.png" alt="JavaScript Logo" class="skill-icon mr-2"> TS/JS
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/dart.png" alt="Dart Logo" class="skill-icon mr-2"> Dart
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/dart.png" alt="Dart Logo" class="skill-icon mr-2"> Dart
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/firebase.png" alt="Firebase Logo" class="skill-icon mr-2"> Firebase
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/firebase.png" alt="Firebase Logo" class="skill-icon mr-2"> Firebase
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/api.png" alt="REST APIs" class="skill-icon mr-2"> REST APIs
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/api.png" alt="REST APIs" class="skill-icon mr-2"> REST APIs
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/git.png" alt="Git Logo" class="skill-icon mr-2"> Git
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/git.png" alt="Git Logo" class="skill-icon mr-2"> Git
                 </div>
-                <div class="skill-card bg-white text-blue-800 font-medium text-center py-4 rounded-lg flex items-center justify-center">
-                    <img src="https://arjunjatav.github.io/Images/design.png" alt="UI/UX Design" class="skill-icon mr-2"> UI/UX Design
+                <div class="skill-card bg-white text-[#7C2A8D] font-medium text-center py-4 rounded-lg flex items-center justify-center">
+                    <img src="Images/design.png" alt="UI/UX Design" class="skill-icon mr-2"> UI/UX Design
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-      <!-- Achievements Section -->
     <section id="achievements" class="py-16 bg-white fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 section-title">Achievements</h2>
+            <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Achievements</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2" height="40" width="40">
+                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2">
                         [Achievement 1, e.g., App Launch Success]
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">[Description, e.g., Launched a React Native e-commerce app with 20,000+ downloads on Google Play Store in 2024.]</p>
                 </div>
                 <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2" height="40" width="40">
+                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2">
                         [Achievement 2, e.g., Hackathon Winner]
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">[Description, e.g., Won 1st place in a national Flutter hackathon for a real-time chat app in 2023.]</p>
                 </div>
                 <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2" height="40" width="40">
+                        <img src="Images/award.png" alt="Achievement Icon" class="achievement-icon mr-2">
                         [Achievement 3, e.g., Open Source Contributor]
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">[Description, e.g., Contributed to Flutter open-source packages, enhancing UI components for 10+ projects.]</p>
@@ -229,17 +236,17 @@
     </section>
 
     <!-- Experience/Companies Section -->
-    <section id="experience" class="py-16 bg-gray-50 fade-in">
+    <section id="experience" class="py-16 bg-[#f9f1fc] fade-in">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Experience</h2>
             <div class="max-w-4xl mx-auto space-y-6">
                 <div class="experience-card bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., TechCorp Solutions]</h3>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-[#7C2A8D]"></i> [Company/Client, e.g., TechCorp Solutions]</h3>
                     <p class="text-gray-500 text-sm">[Role, e.g., React Native Developer] | [Dates, e.g., Jan 2023 - Present]</p>
                     <p class="text-gray-600 mt-2 text-base">[Description, e.g., Built a cross-platform delivery app with real-time tracking using React Native and Firebase, serving 50,000+ users.]</p>
                 </div>
                 <div class="experience-card bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-blue-600"></i> [Company/Client, e.g., Freelance Project]</h3>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-briefcase mr-2 text-[#7C2A8D]"></i> [Company/Client, e.g., Freelance Project]</h3>
                     <p class="text-gray-500 text-sm">[Role, e.g., Flutter Developer] | [Dates, e.g., Jun 2022 - Dec 2022]</p>
                     <p class="text-gray-600 mt-2 text-base">[Description, e.g., Developed a Flutter-based fitness app with real-time workout tracking for a startup client.]</p>
                 </div>
@@ -258,7 +265,7 @@
                         <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-5 h-5 mr-2"> Shopping App
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">A cross-platform e-commerce app built with React Native, Redux, and Firebase. Features product listings, cart, and Stripe payments.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/shopping-app]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/shopping-app]" class="mt-4 inline-block text-[#7C2A8D] font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
                 <div class="project-card bg-white rounded-lg shadow-lg p-6">
                     <img src="https://via.placeholder.com/300x200" alt="Fitness Tracker" class="w-full h-40 object-cover rounded-md mb-4">
@@ -266,7 +273,7 @@
                         <img src="https://flutter.dev/images/flutter-logo-sharing.png" alt="Flutter Logo" class="w-5 h-5 mr-2"> Fitness Tracker
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">A Flutter-based app for tracking workouts and calories, with a sleek UI and Firebase integration. Supports Android and iOS.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/fitness-tracker]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/fitness-tracker]" class="mt-4 inline-block text-[#7C2A8D] font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
                 <div class="project-card bg-white rounded-lg shadow-lg p-6">
                     <img src="https://via.placeholder.com/300x200" alt="Todo App" class="w-full h-40 object-cover rounded-md mb-4">
@@ -274,19 +281,19 @@
                         <img src="https://reactnative.dev/img/header_logo.svg" alt="React Native Logo" class="w-5 h-5 mr-2"> Todo App
                     </h3>
                     <p class="text-gray-600 mt-2 text-base">A simple yet powerful todo list app built with React Native and AsyncStorage for task management.</p>
-                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/todo-app]" class="mt-4 inline-block text-blue-800 font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
+                    <a href="[Link to GitHub or demo, e.g., https://github.com/arjunjatav/todo-app]" class="mt-4 inline-block text-[#7C2A8D] font-medium hover:underline"><i class="fas fa-link mr-2"></i> View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-16 bg-gray-50 fade-in">
+    <section id="education" class="py-16 bg-[#f9f1fc] fade-in">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Education</h2>
             <div class="max-w-4xl mx-auto space-y-6">
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-graduation-cap mr-2 text-blue-600"></i> B.Tech in Computer Science</h3>
+                    <h3 class="text-lg font-semibold text-gray-800"><i class="fas fa-graduation-cap mr-2 text-[#7C2A8D]"></i> B.Tech in Computer Science</h3>
                     <p class="text-gray-500 text-sm">[Institution, e.g., XYZ University, Mumbai] | 2018 - 2022</p>
                     <p class="text-gray-600 mt-2 text-base">[Details, e.g., Specialized in software engineering with a focus on mobile app development. Completed projects in mobile app development and cloud computing.]</p>
                 </div>
@@ -300,25 +307,25 @@
             <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Certifications</h2>
             <div class="max-w-4xl mx-auto space-y-4">
                 <div class="bg-white rounded-lg shadow-md p-4">
-                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Meta Certified React Native Developer, 2023]</p>
+                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-[#7C2A8D]"></i> [Certification, e.g., Meta Certified React Native Developer, 2023]</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-4">
-                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-blue-600"></i> [Certification, e.g., Google Flutter Certification, 2022]</p>
+                    <p class="text-gray-600 text-base"><i class="fas fa-certificate mr-2 text-[#7C2A8D]"></i> [Certification, e.g., Google Flutter Certification, 2022]</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50 fade-in">
+    <section id="contact" class="py-16 bg-[#f9f1fc] fade-in">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-2xl font-bold text-center text-gray-800 mb-10 section-title">Contact Me</h2>
             <div class="max-w-lg mx-auto text-gray-600">
-                <p class="mb-3 flex items-center text-base"><i class="fas fa-envelope mr-2 text-blue-600"></i> <a href="mailto:your.email@example.com" class="text-blue-800 hover:underline">your.email@example.com</a></p>
-                <p class="mb-3 flex items-center text-base"><i class="fab fa-github mr-2 text-blue-600"></i> <a href="https://github.com/arjunjatav" class="text-blue-800 hover:underline">github.com/arjunjatav</a></p>
-                <p class="mb-3 flex items-center text-base"><i class="fab fa-linkedin mr-2 text-blue-600"></i> <a href="https://linkedin.com/in/yourprofile" class="text-blue-800 hover:underline">linkedin.com/in/yourprofile</a></p>
+                <p class="mb-3 flex items-center text-base"><i class="fas fa-envelope mr-2 text-[#7C2A8D]"></i> <a href="mailto:your.email@example.com" class="text-[#7C2A8D] hover:underline">your.email@example.com</a></p>
+                <p class="mb-3 flex items-center text-base"><i class="fab fa-github mr-2 text-[#7C2A8D]"></i> <a href="https://github.com/arjunjatav" class="text-[#7C2A8D] hover:underline">github.com/arjunjatav</a></p>
+                <p class="mb-3 flex items-center text-base"><i class="fab fa-linkedin mr-2 text-[#7C2A8D]"></i> <a href="https://linkedin.com/in/yourprofile" class="text-[#7C2A8D] hover:underline">linkedin.com/in/yourprofile</a></p>
                 <p class="mt-4 text-base">Let’s collaborate to build innovative mobile applications. Reach out for project inquiries or opportunities.</p>
-                <a href="#contact" class="mt-6 inline-block bg-blue-800 text-white font-semibold py-2 px-8 rounded-md btn-animated"><i class="fas fa-rocket mr-2"></i> Start a Project</a>
+                <a href="#contact" class="mt-6 inline-block bg-[#7C2A8D] text-white font-semibold py-2 px-8 rounded-md btn-animated"><i class="fas fa-rocket mr-2"></i> Start a Project</a>
             </div>
         </div>
     </section>

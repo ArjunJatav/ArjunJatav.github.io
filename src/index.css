@@ -1,0 +1,287 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-surface-tint: #ffffff;
+  --color-primary: #ffffff;
+  --color-glass-dark: rgba(255, 255, 255, 0.04);
+  --color-glass-light: rgba(255, 255, 255, 0.72);
+  --color-glass-border-dark: rgba(255, 255, 255, 0.12);
+  --color-glass-border-light: rgba(255, 255, 255, 0.85);
+}
+
+@layer base {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: var(--font-sans);
+    background-color: #ebecee;
+    overscroll-behavior-y: none;
+  }
+
+  html.dark,
+  html.dark body {
+    background-color: #060709;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Authentic Frosted & Vitreous Glassmorphic System (GPU-Composited for Instant Fast Scroll) */
+.frosted-glass {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.84),
+    rgba(255, 255, 255, 0.68)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.92),
+    0 18px 40px -15px rgba(0, 0, 0, 0.08);
+  contain: layout style;
+}
+
+.dark .frosted-glass {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.068),
+    rgba(255, 255, 255, 0.026)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.22),
+    0 18px 36px -15px rgba(0, 0, 0, 0.72);
+}
+
+/* Real-time backdrop-blur reserved exclusively for fixed floating chrome (header, mobile bar, toasts) */
+.frosted-glass-chrome {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    0 16px 36px -12px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, 0, 0);
+}
+
+.dark .frosted-glass-chrome {
+  background: rgba(14, 15, 19, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.22),
+    0 18px 38px -12px rgba(0, 0, 0, 0.75);
+}
+
+.frosted-glass-pill {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dark .frosted-glass-pill {
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translate3d(0, -5px, 0);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 25px 45px -10px rgba(0, 0, 0, 0.12);
+}
+
+.dark .glass-card-hover:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    0 25px 50px -12px rgba(0, 0, 0, 0.85);
+}
+
+/* Vitreous monochrome specular sheen */
+.specular-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.specular-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Zero-blur-pass feathered radial lighting orbs (visually identical to blur-[140px], 100% compositor-thread) */
+.ambient-orb-tl {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(212, 212, 212, 0.25) 38%,
+    transparent 70%
+  );
+}
+
+.dark .ambient-orb-tl {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(163, 163, 163, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+.ambient-orb-tr {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(163, 163, 163, 0.2) 38%,
+    transparent 70%
+  );
+}
+
+.dark .ambient-orb-tr {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(115, 115, 115, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+.ambient-orb-mid {
+  background: radial-gradient(
+    circle,
+    rgba(229, 229, 229, 0.5) 0%,
+    rgba(255, 255, 255, 0.22) 40%,
+    transparent 70%
+  );
+}
+
+.dark .ambient-orb-mid {
+  background: radial-gradient(
+    circle,
+    rgba(115, 115, 115, 0.11) 0%,
+    rgba(255, 255, 255, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+.ambient-orb-br {
+  background: radial-gradient(
+    circle,
+    rgba(212, 212, 212, 0.45) 0%,
+    rgba(255, 255, 255, 0.18) 40%,
+    transparent 70%
+  );
+}
+
+.dark .ambient-orb-br {
+  background: radial-gradient(
+    circle,
+    rgba(163, 163, 163, 0.09) 0%,
+    rgba(255, 255, 255, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+.card-ambient-glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.06) 45%,
+    transparent 72%
+  );
+}
+
+.dark .card-ambient-glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 45%,
+    transparent 72%
+  );
+}
+
+/* Monochrome ambient lighting mesh animations (GPU-composited translate3d) */
+@keyframes orb-float-1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(30px, 20px, 0) scale(1.08);
+  }
+}
+
+@keyframes orb-float-2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-30px, -25px, 0) scale(0.95);
+  }
+}
+
+.orb-1 {
+  animation: orb-float-1 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-2 {
+  animation: orb-float-2 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-1,
+  .orb-2 {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
